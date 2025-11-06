@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>V and C</title>
+    <title>V&C</title>
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,19 +98,49 @@
             font-size: 4em;
             font-family: "Lato", sans-serif;
         }
+
+        .name {
+            font-family: 'Fredericka the Great', serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 32px;
+            color: #F6F4F3;
+            margin-top: 40px;
+        }
+
+        .box:after {
+            background: linear-gradient(to right, #EF2F3C 25%, #F6F4F3 25%, #F6F4F3 50%, #276FBF 50%, #276FBF 75%, #F0A202 75%);
+            position: absolute;
+            content: '';
+            height: 8px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        .box1:after {
+            background: linear-gradient(to right, #EF2F3C 25%, #F6F4F3 25%, #F6F4F3 50%, #276FBF 50%, #276FBF 75%, #F0A202 75%);
+            position: absolute;
+            content: '';
+            height: 8px;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
     </style>
 </head>
 
-<body style="background-color: #fff;">
-
+<body>
     <div class="container">
+        <div class="box"></div>
         <div class="py-2 text-center">
             <!-- <h1>V & C</h1> -->
-            <h2 style="font-family: 'Fredericka the Great', serif;">Vignesh & Charulatha</h2>
+            <h2 class="name">Vignesh & Charulatha</h2>
         </div>
 
         <div class="row justify-content-center">
-            <h2 style="font-size: 14px;margin-top: 30px; padding: 0 40px;line-height: 28px;">We’re delighted to share
+            <h2 style="font-size: 14px;margin-top: 24px; padding: 0 40px;line-height: 28px;">We’re delighted to share
                 that we’ll be
                 getting "engaged" in</h2>
         </div>
@@ -123,7 +153,7 @@
                 2025</h2>
         </div>
         <div class="row justify-content-center">
-            <h3 style="font-size: 14px;font-weight: bold;">@</h3>
+            <h3 style="font-size: 14px;font-weight: bold;margin-top: 20px;">@</h3>
         </div>
         <div class="row justify-content-center">
             <h3 style="font-size: 14px;margin-top: 20px;font-weight: bold;">Venkateshwara Marriage Hall</h3>
@@ -134,14 +164,18 @@
         </div>
 
         <div class="row justify-content-center">
-            <h4 style="font-size: 12px;border: dotted 1px #fff;padding: 8px; "> <i class="bi bi-geo-alt"></i>Location
+            <h4 style="font-size: 12px;border: dotted 1px #fff;padding: 8px; ">
+                <a onclick="openMap(13.195565, 80.177871)">Click Here for Location</a>
             </h4>
         </div>
 
         <footer class="my-4 pt-4 text-muted text-center">
-            <p class="mb-1" style="font-family: 'Lato', sans-serif">&copy; 2025-26 Made with ❤️</p>
+            <p class="mb-1" style="font-family: 'Lato', sans-serif; font-size: 12px;">&copy;
+                2025-26. A Creation of
+                Murugesh Dhanakody</p>
         </footer>
     </div>
+    <div class="box1"></div>
 </body>
 <script>
     const year = (new Date().getFullYear());
@@ -175,6 +209,11 @@
 </div>";
 
     }, 1000);
+    function openMap(lat, lng) {
+        // Opens Google Maps in a new tab with the given coordinates
+        const url = `https://www.google.com/maps?q=${lat},${lng}`;
+        window.open(url, '_blank');
+    }
 </script>
 
 </html>
