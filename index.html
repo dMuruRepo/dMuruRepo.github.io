@@ -1,5 +1,146 @@
-<html>
-<body>
-<h1>test</h1>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Checkout example for Bootstrap</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #183059 !important;
+        }
+        h1{
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            color: #F6F4F3;
+        }
+
+        h2 {
+            font-family: "Lato", sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 28px;
+            color: #F6F4F3;
+        }
+
+        #timer {
+            color: #F6F4F3;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        .days,
+        .hours,
+        .minutes,
+        .seconds {
+            display: inline-block;
+            padding: 10px;
+            width: 120px;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .days {
+            background: #EF2F3C;
+        }
+
+        .hours {
+            background: #F6F4F3;
+            color: #183059;
+        }
+
+        .minutes {
+            background: #276FBF;
+        }
+
+        .seconds {
+            background: #F0A202;
+        }
+
+        .numbers {
+            color: #183059;
+            font-size: 4em;
+            font-family: "Lato", sans-serif;
+        }
+    </style>
+</head>
+
+<body style="background-color: #fff;">
+
+    <div class="container">
+        <div class="py-2 text-center">
+            <h1>V & C</h1>
+            <h2>Stacia & Johnny</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 style="font-size: 14px;margin-top: 30px;">We are getting Engaged in</h2>
+        </div>
+        <div class="row justify-content-center">
+
+            <div id="timer"></div>
+        </div>
+        <div class="row justify-content-center">
+            <h2 style="font-size: 14px;margin-top: 30px; border: solid 1px #fff; padding: 8px;">Sunday, November 23rd, 2025</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 style="font-size: 14px;margin-top: 30px;">Venkateshwara Marriage Hall</h2>
+        </div>
+         <div class="row justify-content-center">
+            <h2 style="font-size: 14px;margin-top: 30px;">Red Hills, Tamil Nadu 600052
+            </h2>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center">
+            <p class="mb-1" style="font-family: 'Lato', sans-serif">&copy; 2025-26 Made with ❤️</p>
+        </footer>
+    </div>
 </body>
+<script>
+    const year = (new Date().getFullYear());
+    const weddingDate = new Date(2025, 10, 23, 18, 30).getTime();
+
+    // countdown
+    let timer = setInterval(function () {
+
+        // get today's date
+        const today = new Date().getTime();
+
+        // get the difference
+        const diff = weddingDate - today;
+
+        // math
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // display
+        document.getElementById("timer").innerHTML =
+            "<div class=\"days\"> \
+  <div class=\"numbers\">" + days + "</div>days</div> \
+<div class=\"hours\"> \
+  <div class=\"numbers\">" + hours + "</div>hours</div> \
+<div class=\"minutes\"> \
+  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+<div class=\"seconds\"> \
+  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+</div>";
+
+    }, 1000);
+</script>
+
 </html>
